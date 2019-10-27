@@ -1,0 +1,33 @@
+# Carousel entity routing definition
+entity.carousel_entity.collection:
+  title: 'Carousel'
+  route_name: entity.carousel_entity.collection
+  description: 'List Carousel entity entities'
+  base_route: system.admin_content
+
+carousel_entity.settings_tab:
+  route_name: carousel_entity.settings
+  title: 'Settings'
+  base_route: carousel_entity.settings
+
+entity.carousel_entity.canonical:
+  route_name: entity.carousel_entity.canonical
+  base_route: entity.carousel_entity.canonical
+  title: 'View'
+
+entity.carousel_entity.edit_form:
+  route_name: entity.carousel_entity.edit_form
+  base_route: entity.carousel_entity.canonical
+  title: 'Edit'
+
+entity.carousel_entity.version_history:
+  route_name: entity.carousel_entity.version_history
+  base_route: entity.carousel_entity.canonical
+  title: 'Revisions'
+
+entity.carousel_entity.delete_form:
+  route_name:  entity.carousel_entity.delete_form
+  base_route:  entity.carousel_entity.canonical
+  title: Delete
+  weight: 10
+

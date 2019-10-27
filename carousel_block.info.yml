@@ -1,0 +1,5 @@
+name: 'Carousel Block'
+type: module
+description: 'Module Provide carousel block with slick library'
+core: 8.x
+package: 'Custom'

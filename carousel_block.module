@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains carousel_block.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function carousel_block_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the carousel_block module.
+    case 'help.page.carousel_block':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module Provide carousel block with slick library') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function carousel_block_theme($existing, $type, $theme, $path) {
+  $variables = [
+    'carousel_block' => [
+      'variables' => [
+        'title' => '',
+        'items' => NULL,
+        'settings' => NULL,
+      ],
+      'template' => 'carousel--block',
+    ],
+  ];
+
+  return $variables;
+}

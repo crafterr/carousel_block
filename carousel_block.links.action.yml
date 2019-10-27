@@ -1,0 +1,11 @@
+entity.carousel_entity.add_form:
+  route_name: entity.carousel_entity.add_form
+  title: 'Add Carousel Item'
+  appears_on:
+    - entity.carousel_entity.collection
+
+entity.carousel_entity.settings_form:
+  route_name: carousel_block.admin_settings
+  title: 'Settings Carousel Item'
+  appears_on:
+    - entity.carousel_entity.collection    

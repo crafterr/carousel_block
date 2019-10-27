@@ -1,0 +1,18 @@
+{
+  "name": "crafterr/carousel_block",
+  "type": "drupal-module",
+  "description": "Module Provide carousel block with slick library",
+  "keywords": ["Drupal"],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": { },
+  "require": {
+    "php": ">=7.1"
+  },
+  "authors": [
+    {
+      "name": "Adam Pietras",
+      "email": "adam@crafter.net.pl"
+    }
+  ]
+}

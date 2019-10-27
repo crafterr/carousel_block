@@ -1,0 +1,30 @@
+add carousel entity entities:
+  title: 'Create new Carousel entity entities'
+
+administer carousel entity entities:
+  title: 'Administer Carousel entity entities'
+  description: 'Allow to access the administration form to configure Carousel entity entities.'
+  restrict access: true
+
+delete carousel entity entities:
+  title: 'Delete Carousel entity entities'
+
+edit carousel entity entities:
+  title: 'Edit Carousel entity entities'
+
+view published carousel entity entities:
+  title: 'View published Carousel entity entities'
+
+view unpublished carousel entity entities:
+  title: 'View unpublished Carousel entity entities'
+
+view all carousel entity revisions:
+  title: 'View all Carousel entity revisions'
+
+revert all carousel entity revisions:
+  title: 'Revert all Carousel entity revisions'
+  description: 'Role requires permission <em>view Carousel entity revisions</em> and <em>edit rights</em> for carousel entity entities in question or <em>administer carousel entity entities</em>.'
+
+delete all carousel entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Carousel entity revisions</em> and <em>delete rights</em> for carousel entity entities in question or <em>administer carousel entity entities</em>.'

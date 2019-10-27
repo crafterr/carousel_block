@@ -1,0 +1,7 @@
+carousel_block.admin_settings:
+  path: '/admin/config/media/carousel'
+  defaults:
+    _form: '\Drupal\carousel_block\Form\SettingsForm'
+    _title: 'Carousel settings'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,4 @@
+services:
+  carousel.service:
+    class: Drupal\carousel_block\Service\CarouselService
+    arguments: ['@renderer']
