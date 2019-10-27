@@ -57,7 +57,7 @@ class CarouselBlock extends BlockBase implements ContainerFactoryPluginInterface
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, CarouselServiceInterface $carouselService) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->moduleSettings = $config_factory->get('carousel.settings');
+    $this->moduleSettings = $config_factory->get('carousel_block.settings');
     $this->entityTypeManager = $entity_type_manager;
     $this->carouselService =$carouselService;
   }
@@ -85,7 +85,6 @@ class CarouselBlock extends BlockBase implements ContainerFactoryPluginInterface
       '#items' => $this->getCarouselItems(),
       '#theme' => 'carousel_block',
     ];
-
 
       $build['#attached'] = [
         'library' => [

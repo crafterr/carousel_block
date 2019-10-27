@@ -1,8 +1,7 @@
-settings:
-  autoplay: 0
-  autoplaySpeed: 0
-  dots: 1
-  arrows: 1
-  infinite: 1
-  centerMode: 0
-  image_style: []
+autoplay: 0
+autoplaySpeed: 0
+dots: 1
+arrows: 1
+infinite: 1
+centerMode: 0
+image_style: []

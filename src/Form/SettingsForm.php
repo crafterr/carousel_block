@@ -28,14 +28,14 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return ['carousel.settings'];
+    return ['carousel_block.settings'];
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('carousel.settings');
+    $config = $this->config('carousel_block.settings');
     $form['autoplay'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Autoplay'),
@@ -81,7 +81,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'checkbox',
       '#title' => $this->t('CenterMode'),
       '#description' => $this->t("Enables centered view with partial prev/next slides. Use with odd numbered slidesToShow counts."),
-      '#default_value' => $config->get('infinite'),
+      '#default_value' => $config->get('centerMode'),
     ];
 
 
@@ -129,7 +129,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->configFactory->getEditable('carousel.settings')
+    $this->configFactory->getEditable('carousel_block.settings')
       ->set('autoplay',$form_state->getValue('autoplay'))
       ->set('autoplaySpeed',$form_state->getValue('autoplaySpeed'))
       ->set('dots', $form_state->getValue('dots'))
