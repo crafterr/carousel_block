@@ -2,6 +2,7 @@
 
 namespace Drupal\carousel_block\Form;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -65,6 +66,7 @@ class CarouselEntityForm extends ContentEntityForm {
           '%label' => $entity->label(),
         ]));
     }
+    Cache::invalidateTags(['entity_type:carousel']);
     $form_state->setRedirect('entity.carousel_entity.collection', ['carousel_entity' => $entity->id()]);
   }
 

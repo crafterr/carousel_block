@@ -7,6 +7,7 @@ use Drupal\carousel_block\Form\SettingsForm;
 use Drupal\carousel_block\Service\CarouselServiceInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -135,17 +136,27 @@ class CarouselBlock extends BlockBase implements ContainerFactoryPluginInterface
 
         $file = $item->getImage();
         $image_style = $this->moduleSettings->get('image_style');
-        if (empty($image_style) || $image_style == SettingsForm::ORIGINAL_IMAGE_STYLE_ID) {
-          $item->image_url = file_url_transform_relative(file_create_url($file->entity->getFileUri()));
+        if (!is_null($file->entity)) {
+          if (empty($image_style) || $image_style == SettingsForm::ORIGINAL_IMAGE_STYLE_ID) {
+            $item->image_url = file_url_transform_relative(file_create_url($file->entity->getFileUri()));
+          }
+          else {
+            $item->image_url = file_url_transform_relative(ImageStyle::load($image_style)
+              ->buildUrl($file->entity->getFileUri()));
+          }
         }
-        else {
-          $item->image_url = file_url_transform_relative(ImageStyle::load($image_style)
-            ->buildUrl($file->entity->getFileUri()));
-        }
+
       }
     }
 
     return $carousel;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getCacheTags() {
+    return Cache::mergeTags(parent::getCacheTags(), ['entity_type:carousel']);
   }
 
 }
